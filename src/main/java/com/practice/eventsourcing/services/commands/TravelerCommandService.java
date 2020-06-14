@@ -8,5 +8,5 @@ public interface TravelerCommandService {
 
     public CompletableFuture<String> createTraveler(TravelerCreateDTO travelerCreateDTO);
     public CompletableFuture<String> shiftTraveler(String accountNumber, TravelerRelocateDTO travelerRelocateDTO);
-    public CompletableFuture<String> returnTraveler(String accountNumber, TravelerReturnDTO travelerReturnDTO);
+
 }

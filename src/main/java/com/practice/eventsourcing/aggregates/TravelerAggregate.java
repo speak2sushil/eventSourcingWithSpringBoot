@@ -3,7 +3,6 @@ package com.practice.eventsourcing.aggregates;
 
 import com.practice.eventsourcing.commands.CreateTravelerCommand;
 import com.practice.eventsourcing.commands.RelocateTravelerCommand;
-import com.practice.eventsourcing.commands.ReturnTravelerCommand;
 import com.practice.eventsourcing.events.*;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.commandhandling.model.AggregateIdentifier;
@@ -71,23 +70,5 @@ public class TravelerAggregate {
         this.status = String.valueOf(travelerShiftedEvent.status);
     }
 
-  /*  @CommandHandler
-    protected void on(ReturnTravelerCommand returnTravelerCommand){
-        AggregateLifecycle.apply(new TravelerReturnEvent(returnTravelerCommand.id, returnTravelerCommand.getName(),
-                returnTravelerCommand.getLocation()));
-    }
 
-    @EventSourcingHandler
-    protected void on(TravelerReturnEvent travelerReturnEvent){
-        this.id = travelerReturnEvent.id;
-        this.name = travelerReturnEvent.getName();
-        this.currentLocation = travelerReturnEvent.getLocation();
-        AggregateLifecycle.apply(new TravelerInActiveEvent(this.id, Status.IDLE));
-
-    }
-
-    @EventSourcingHandler
-    protected void on(TravelerInActiveEvent travelerInActiveEvent){
-        this.status = String.valueOf(travelerInActiveEvent.status);
-    }*/
 }

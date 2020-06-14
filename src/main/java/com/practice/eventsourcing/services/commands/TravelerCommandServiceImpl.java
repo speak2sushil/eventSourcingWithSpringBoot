@@ -27,10 +27,5 @@ public class TravelerCommandServiceImpl implements TravelerCommandService {
         return commandGateway.send(new RelocateTravelerCommand(accountNumber, travelerRelocateDTO.getName(), travelerRelocateDTO.getLocation()));
     }
 
-    @Override
-    public CompletableFuture<String> returnTraveler(String accountNumber, TravelerReturnDTO travelerReturnDTO) {
-        return commandGateway.send(new ReturnTravelerCommand(accountNumber, travelerReturnDTO.getName(), travelerReturnDTO.getLocation()));
-    }
-
 
 }
